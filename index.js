@@ -149,8 +149,18 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(scoreCb, getInningScore, numberOfInnings,) {
+  const board = [];
+  let Home = 0;
+  let Away = 0;
+
+  for (let i=0; i<=numberOfInnings; i++){
+    const currentScore = getInningScore(scoreCb);
+    Home = Home + currentScore.Home
+    Away = Away + currentScore.Away
+    board.push(`Inning ${i + 1}: Away ${currentScore.Away} - Home ${currentScore.Home}`);
+  }
+  return scoreboard;
 }
 
 
